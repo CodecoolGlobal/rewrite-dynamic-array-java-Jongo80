@@ -19,10 +19,12 @@ public class DynamicArray {
     }
 
     public int size() {
-        return 0;
+        return array.length;
     }
 
     public void add(int value) {
+        array = Arrays.copyOf(array, array.length + 1);
+        array[array.length - 1] = value;
     }
 
     public int get(int index) {
