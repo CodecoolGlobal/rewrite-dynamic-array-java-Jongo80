@@ -2,8 +2,6 @@ package com.codecool.dynamicarray;
 
 import org.junit.jupiter.api.*;
 
-import java.lang.reflect.Field;
-
 import static org.junit.jupiter.api.Assertions.*;
 
 @TestMethodOrder(MethodOrderer.OrderAnnotation.class)

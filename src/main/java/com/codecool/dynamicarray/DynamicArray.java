@@ -42,5 +42,36 @@ public class DynamicArray {
     }
 
     public void insert(int index, int newValue) {
+        if (index < array.length) {
+            array = Arrays.copyOf(array, array.length + 1);
+            for (int i = array.length - 2; i > index; i--) {
+                if (i > index) {
+                    array[i] = array[i - 1];
+                }
+            }
+            array[index] = newValue;
+            if (array.length > capacity) {
+                capacity *= 2;
+            }
+        }
+        else {
+            array = Arrays.copyOf(array, array.length + 1);
+            array[array.length - 1] = newValue;
+            if (array.length > capacity) {
+                capacity *= 2;
+            }
+        }
+    }
+
+    @Override
+    public String toString() {
+        String result = "";
+        for (int i = 0; i < array.length; i++) {
+            result += array[i];
+            if (i != array.length - 1) {
+                result += ", ";
+            }
+        }
+        return array.length > 0 ? String.format("[%s]", result) : "[]";
     }
 }
