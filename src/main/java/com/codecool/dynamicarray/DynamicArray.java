@@ -28,10 +28,17 @@ public class DynamicArray {
     }
 
     public int get(int index) {
-        return 0;
+        return array[index];
     }
 
     public void remove(int indexToBeRemoved) {
+        int[] copy = new int[array.length - 1];
+        for (int i = 0, j = 0; i < array.length; i++) {
+            if (i != indexToBeRemoved) {
+                copy[j++] = array[i];
+            }
+        }
+        array = copy;
     }
 
     public void insert(int index, int newValue) {
